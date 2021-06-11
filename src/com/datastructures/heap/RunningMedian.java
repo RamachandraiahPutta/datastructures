@@ -23,12 +23,8 @@ import java.util.PriorityQueue;
 public class RunningMedian {
 
 	public double[] runningMedian(int[] array) {
-		PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(new Comparator<Integer>() {
-			@Override
-			public int compare(Integer o1, Integer o2) {
-				return o2.compareTo(o1);
-			}
-		});
+
+		PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>((o1, o2) -> o2.compareTo(o1));
 
 		PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
 
